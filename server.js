@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import agoraRoutes from "./routes/agora.js"; // extension .js is required in ESM
-import connectDB from "./models/index.js"; // import the database connection
+
 
 dotenv.config();
 
@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, async () => {
   try {
-    await connectDB();
+
     console.log(`🚀 Server running on http://localhost:${PORT}`);
   } catch (err) {
     console.error("❌ DB Connection failed:", err.message);
